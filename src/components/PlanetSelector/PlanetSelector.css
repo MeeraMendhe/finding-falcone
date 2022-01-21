@@ -1,0 +1,17 @@
+.planet-selector {
+  font-size: 20px;
+}
+
+.planet-selector img {
+  height: 6rem;
+  width: 6rem;
+}
+
+.margin-m {
+  margin: 0.5rem;
+}
+
+.custom-select {
+  border-radius: 5%;
+  padding: 0.3rem 1rem 0.3rem 0.3rem;
+}

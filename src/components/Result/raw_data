@@ -1,0 +1,104 @@
+// const { planetNames, vehicleNames } = extractData(
+//   props.location.state.selectionDetails
+// );
+// console.log(planetNames, vehicleNames);
+
+// function dashCalling(to, pl, vh) {
+//   async function fetchData() {
+//     try {
+//       const result = await axios({
+//         method: "POST",
+//         url: "https://cors.io/?https://findfalcone.herokuapp.com/find",
+//         body: JSON.stringify({
+//           token: to,
+//           planet_names: pl,
+//           vehicle_names: vh,
+//         }),
+//         headers: JSON.stringify({
+//           Accept: "application/json",
+//           "Content-Type": "application/json",
+//         }),
+//       });
+//       console.log("response: ", result.data);
+//     } catch (error) {
+//       console.log(error);
+//     } finally {
+//       console.log("done calling find api");
+//     }
+//   }
+//   fetchData();
+// }
+
+// function extractData(selectionDetails) {
+//   if (selectionDetails) {
+//     let planetNames = selectionDetails.map((s) => {
+//       return s.selectedPlanet;
+//     });
+//     let vehicleNames = selectionDetails.map((s) => {
+//       return s.selectedVehicle;
+//     });
+//     return { planetNames, vehicleNames };
+//   }
+// }
+
+// const [resultMessage, findFalconeAPIError, planet] = findFalconeAPI(
+//   token,
+//   planetNames,
+//   vehicleNames
+// );
+
+// function findFalconeAPI(token, planetNames, vehicleNames) {
+//   let resultMessage = "no message",
+//     error = 0,
+//     planet = "";
+//   console.log("findFalconeAPI checking");
+
+// fetch("https://findfalcone.herokuapp.com/find", {
+//   method: "POST",
+//   headers: {
+//     Accept: "application/json",
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     token: token,
+//     planet_names: planetNames,
+//     vehicle_names: vehicleNames,
+//   }),
+// })
+//   .then((res) => res.json())
+//   .then((data) => {
+//     // setState({ loading: false, isConnected: true });
+//     if (data.status === "error" || data === undefined) {
+//       resultMessage = "Please re-initialize the game!";
+//       error = 1;
+//     } else
+//       data.status === "false"
+//         ? (resultMessage = "Sorry! You could not find Falcone!")
+//         : (planet = data.planet_name);
+//   })
+//   .catch((e) => {
+//     console.log("findFalconeAPI error", e);
+//     // setTimeout(findFalconeAPI, 5000);
+//   });
+
+// console.log(token, resultMessage);
+// return [resultMessage, error, planet];
+// }
+
+// function extractPropsData(props) {
+// let selectionDetails = props.location.state;
+// if (selectionDetails) {
+//   let planetNames = selectionDetails.map((s) => {
+//     return s.selectedPlanet;
+//   });
+//   let vehicleNames = selectionDetails.map((s) => {
+//     return s.selectedVehicle;
+//   });
+
+//     // setPlanetNames(planetNames);
+//     // setVehicleNames(vehicleNames);
+
+//     setTotalTime(props.location.totalTime);
+//     if (token) findFalconeAPI(token, planetNames, vehicleNames);
+//   }
+// }

@@ -1,0 +1,10 @@
+.vehicle-selector {
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-left: 1.7rem;
+}
+
+.radio-btn {
+  display: flex;
+  margin-bottom: 0.4rem;
+}

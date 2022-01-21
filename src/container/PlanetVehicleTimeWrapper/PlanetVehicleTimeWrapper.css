@@ -1,0 +1,61 @@
+.planet-vehicle-time-container {
+  width: 85vw;
+  margin: 1rem auto 0;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.left {
+  /* margin-right: auto; */
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.time-taken-wrapper {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: inline-block;
+  font-weight: 500;
+  color: rgb(0, 75, 145);
+  padding: 0.3rem;
+  border-bottom: 1px solid black;
+}
+
+.planet-vehicle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 12rem);
+  grid-gap: 4rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.loading {
+  margin-bottom: 2rem;
+}
+
+.button-black:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.button-black {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0.5rem 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: rgb(33, 35, 36);
+  color: white;
+  border: 2px solid rgb(33, 35, 36);
+}
+
+.button-find-falcone:hover:enabled {
+  background-color: white;
+  color: black;
+}

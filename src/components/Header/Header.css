@@ -1,0 +1,45 @@
+nav {
+  height: 4rem;
+  border: 1px solid #dfdfdf;
+}
+
+.header {
+  width: 80vw;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .hero {
+  font-size: 1.5rem;
+}
+
+.header .navigation {
+  font-size: 1.2rem;
+  /* margin-right: 5rem; */
+  list-style: none;
+  display: flex;
+}
+
+.header .nav-link-margin {
+  margin-right: 2rem;
+}
+
+.nav-link {
+  padding: 0.5rem;
+  color: #181818;
+}
+
+.nav-link:hover {
+  /* transform: translateY(-2px); */
+  border-bottom: 1px solid #00f;
+  transition: all ease-in-out 0.5s;
+}
+
+.nav-link-active {
+  border-bottom: 1px solid #00f;
+  transition: border-bottom 0.5s ease-in-out;
+}
