@@ -10,7 +10,7 @@ axios.defaults.baseURL = "https://findfalcone.herokuapp.com";
   - axios already support generic request in one parameter, no need to call specialized ones
 **/
 export const useAxios = (axiosParams) => {
-  const [response, setResponse] = useState(undefined);
+  const [response, setResponse] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -26,6 +26,7 @@ export const useAxios = (axiosParams) => {
       }
     };
     fetchData(axiosParams);
+    console.log("useAxios call:", axiosParams);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // execute once only
 

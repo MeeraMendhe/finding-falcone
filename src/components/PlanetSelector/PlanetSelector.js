@@ -4,11 +4,7 @@ import { useState } from "react";
 import "./PlanetSelector.css";
 
 const PlanetSelector = (props) => {
-  // const [options, setOptions] = useState("");
   const [planetImg, setPlanetImg] = useState("");
-  // console.log("PS: In", props.id);
-
-  // console.log(props.id, props.planets, props.vehicles);
 
   import(`../../assets/images/planets/${props.planetImg}.png`).then((image) => {
     setPlanetImg(image.default);
@@ -36,4 +32,5 @@ const PlanetSelector = (props) => {
     </div>
   );
 };
+
 export default PlanetSelector;

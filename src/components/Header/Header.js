@@ -11,18 +11,18 @@ const Header = () => {
         </NavLink>
         <ul className="navigation">
           <NavLink
-            activeClassName="nav-link-active"
-            className="nav-link nav-link-story nav-link-margin"
-            exact
+            className={`${(isActive) =>
+              isActive
+                ? "nav-link-active"
+                : ""} nav-link nav-link-story nav-link-margin `}
             to="/"
           >
             Story
           </NavLink>
           <NavLink
-            activeClassName="nav-link-active"
-            className="nav-link nav-play"
-            exact
-            to="/find-falcone"
+            className={`${(isActive) =>
+              isActive ? "nav-link-active" : ""} nav-link nav-play`}
+            to="/play"
           >
             Play
           </NavLink>

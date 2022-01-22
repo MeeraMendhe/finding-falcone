@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Result.css";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAxios } from "../../hooks/useAxios";
 import { Link } from "react-router-dom";
 
-const Result = (props) => {
+const Result = () => {
   const [token, setToken] = useState("");
   const [status, setStatus] = useState("");
   const [resultMessage, setResultMessage] = useState("");
   const [planetName, setPlanetName] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const state = props.location.state;
+  const state = useLocation().state;
+  const navigate = useNavigate();
   const { response, error } = useAxios({
     method: "POST",
     url: "/token",
@@ -21,7 +22,6 @@ const Result = (props) => {
     },
     body: {},
   });
-  const history = useHistory();
 
   const getResult = useCallback(
     async function () {
@@ -63,9 +63,9 @@ const Result = (props) => {
         getResult();
       }
     } else {
-      history.push("/");
+      navigate("/");
     }
-  }, [state, history, token, getResult, response]);
+  }, [state, navigate, token, getResult, response]);
 
   return (
     <div className="result__container">
@@ -87,7 +87,7 @@ const Result = (props) => {
           <div className="play-button">
             <Link
               to={{
-                pathname: "/find-falcone",
+                pathname: "/play",
               }}
             >
               <button

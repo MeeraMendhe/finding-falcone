@@ -1,18 +1,12 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../../context/DataContext";
 import "./Story.css";
 
-const Rules = (props) => {
-  console.log(
-    "Story component originalPlanets: ",
-    props.originalPlanets,
-    props.planetsLoading
-  );
-  console.log(
-    "Story component originalVehicles: ",
-    props.originalVehicles,
-    props.vehiclesLoading
-  );
+const Story = () => {
+  const dataContext = useContext(DataContext);
+
+  // console.log("Story: ", dataContext.planets, dataContext.vehicles);
 
   return (
     <div className="story-container">
@@ -37,10 +31,10 @@ const Rules = (props) => {
         to only 4 of these planets.
       </p>
       <h2 className="text-center">Potentail Hideouts</h2>
-      {!props.planetsLoading ? (
+      {!dataContext.planetsLoading ? (
         <div className="planets-wrapper">
           {/* <h2 className="text-center">POTENTIAL HIDEOUTS</h2> */}
-          {props.originalPlanets.map((planet) => (
+          {dataContext.planets.map((planet) => (
             <div key={planet.name} id="planets" className="row">
               <div className="col text-center">
                 <figure>
@@ -67,7 +61,7 @@ const Rules = (props) => {
       )}
 
       <h2 className="text-center">Available Vehicles</h2>
-      {!props.vehiclesLoading ? (
+      {!dataContext.vehiclesLoading ? (
         <div>
           <div className="row">
             <div className="col text-center">
@@ -78,7 +72,7 @@ const Rules = (props) => {
             </div>
           </div>
           <div id="vehicles" className="row vehicles-wrapper">
-            {props.originalVehicles.map((vehicle) => (
+            {dataContext.vehicles.map((vehicle) => (
               <div key={vehicle.name} className="col text-center ">
                 <figure>
                   <img
@@ -112,14 +106,12 @@ const Rules = (props) => {
         </div>
       </div>
       <div className="button-wrapper">
-        <a href="/find-falcone">
-          <button className="button-green button button-start">
-            Let's Start!
-          </button>
-        </a>
+        <Link to="/play">
+          <button className="button-green button button-start">Play!</button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Rules;
+export default Story;
