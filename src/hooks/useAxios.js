@@ -26,7 +26,6 @@ export const useAxios = (axiosParams) => {
       }
     };
     fetchData(axiosParams);
-    console.log("useAxios call:", axiosParams);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // execute once only
 

@@ -6,10 +6,29 @@
   padding-bottom: 10vh;
 }
 
-.planets-wrapper {
+.story_ph,
+.story_av {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.planets-wrapper,
+.vehicles-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#planets {
+  margin: 1rem;
+  flex: 1;
+}
+
+/* .planets-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
+} */
 
 .vehicles-wrapper {
   display: grid;
@@ -34,15 +53,7 @@
 }
 
 .button-start {
-  background-color: #4caf50; /* Green */
-  /* border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.4s;
-  cursor: pointer; */
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 16px 32px;

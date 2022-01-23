@@ -3,6 +3,16 @@
   margin: 2rem auto 1rem;
   text-align: center;
 }
+
 .result__message {
   font-size: 2rem;
+}
+
+.result__planet {
+  margin: 1rem;
+}
+
+.result__time_planet_container {
+  margin: 1rem;
+  font-size: 1.5rem;
 }

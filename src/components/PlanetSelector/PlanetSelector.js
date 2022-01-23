@@ -1,6 +1,4 @@
 import { useState } from "react";
-
-// import dummy_planet from "../../assets/images/planets/dummy_planet.png";
 import "./PlanetSelector.css";
 
 const PlanetSelector = (props) => {

@@ -25,7 +25,6 @@ const Result = () => {
 
   const getResult = useCallback(
     async function () {
-      // console.log("starting useCallback");
       await axios({
         method: "post",
         url: "https://findfalcone.herokuapp.com/find",
@@ -48,7 +47,6 @@ const Result = () => {
           }
           setStatus(res.data.status);
           setLoading(false);
-          // console.log("find api response: ", res.data);
         })
         .catch((error) => console.log());
     },
@@ -57,7 +55,6 @@ const Result = () => {
 
   useEffect(() => {
     if (state) {
-      // console.log("response:", response);
       if (response !== null && response !== undefined) {
         setToken(response.token);
         getResult();
@@ -77,11 +74,13 @@ const Result = () => {
         <div>
           <div className="result__message">{resultMessage}</div>
           {status ? (
-            <div>
+            <div className="result__time_planet_container">
+              <div className="result__planet">
+                Found at planet : {planetName}
+              </div>
               <div className="result__total-time">
                 Time Taken: {state.totalTime}
               </div>
-              <div className="result__planet">Planet : {planetName}</div>
             </div>
           ) : null}
           <div className="play-button">

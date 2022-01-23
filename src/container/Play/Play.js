@@ -1,7 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-// import axios from "axios";
 import { Link } from "react-router-dom";
-
 import "./Play.css";
 import { DataContext } from "../../context/DataContext";
 import PlanetSelector from "../../components/PlanetSelector/PlanetSelector";
@@ -52,10 +50,8 @@ function Play() {
   console.log("remainingVehicles:", remainingVehicles);
 
   useEffect(() => {
-    // console.log("Play component useEffect");
     if (!planetsLoading) setRemainingPlanets(planets);
     if (!vehiclesLoading) setRemainingVehicles(vehicles);
-
     buildSelectionDetails();
     setBuildDone(true);
   }, [planetsLoading, planets, vehiclesLoading, vehicles]);

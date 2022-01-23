@@ -6,8 +6,6 @@ import "./Story.css";
 const Story = () => {
   const dataContext = useContext(DataContext);
 
-  // console.log("Story: ", dataContext.planets, dataContext.vehicles);
-
   return (
     <div className="story-container">
       <p>
@@ -30,14 +28,14 @@ const Story = () => {
         However he has limited resources at his disposal &amp; can send his army
         to only 4 of these planets.
       </p>
-      <h2 className="text-center">Potentail Hideouts</h2>
+      <h2 className="story_ph">Potential Hideouts</h2>
       {!dataContext.planetsLoading ? (
         <div className="planets-wrapper">
           {/* <h2 className="text-center">POTENTIAL HIDEOUTS</h2> */}
           {dataContext.planets.map((planet) => (
             <div key={planet.name} id="planets" className="row">
               <div className="col text-center">
-                <figure>
+                <div>
                   <img
                     className="rounded-circle planet-size"
                     src={
@@ -46,12 +44,10 @@ const Story = () => {
                     }
                     alt={planet.name}
                   />
-                  <figcaption>
-                    <b>{planet.name}</b>
-                    <br />
-                    Distance - <code>{planet.distance}</code>
-                  </figcaption>
-                </figure>
+                  <div>
+                    <div>{planet.name}</div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -60,21 +56,17 @@ const Story = () => {
         <div>Loading...</div>
       )}
 
-      <h2 className="text-center">Available Vehicles</h2>
+      <h2 className="story_av">Available Vehicles</h2>
       {!dataContext.vehiclesLoading ? (
         <div>
-          <div className="row">
-            <div className="col text-center">
-              <p>
-                These are the list of vehicles and their details that are
-                available at King Shan's disposal.
-              </p>
-            </div>
-          </div>
+          <p style={{ textAlign: "center" }}>
+            These are the list of vehicles and their details that are available
+            at King Shan's disposal.
+          </p>
           <div id="vehicles" className="row vehicles-wrapper">
             {dataContext.vehicles.map((vehicle) => (
               <div key={vehicle.name} className="col text-center ">
-                <figure>
+                <div>
                   <img
                     className="vehicle-size"
                     src={
@@ -83,16 +75,10 @@ const Story = () => {
                     }
                     alt="Space Pod"
                   />
-                  <figcaption>
-                    <b>{vehicle.name}</b>
-                    <br />
-                    Max Distance - <code>{vehicle.max_distance} MM</code>
-                    <br />
-                    Speed - <code>{vehicle.speed} MM/hour</code>
-                    <br />
-                    Units Available - <code>{vehicle.total_no}</code>
-                  </figcaption>
-                </figure>
+                  <div>
+                    <div>{vehicle.name}</div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

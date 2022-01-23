@@ -22,8 +22,6 @@ export const DataContextProvider = ({ children }) => {
     url: "/vehicles",
   });
 
-  console.log(planetsLoading, vehiclesLoading);
-
   return (
     <DataContext.Provider
       value={{
