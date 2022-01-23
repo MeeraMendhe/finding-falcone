@@ -7,14 +7,7 @@ import VehicleSelector from "../../components/VehicleSelector/VehicleSelector";
 
 function Play() {
   const dataContext = useContext(DataContext);
-  const {
-    planets,
-    vehicles,
-    planetsLoading,
-    planetsError,
-    vehiclesLoading,
-    vehiclesError,
-  } = dataContext;
+  const { planets, vehicles, planetsLoading, vehiclesLoading } = dataContext;
   const [remainingPlanets, setRemainingPlanets] = useState(null);
   const [remainingVehicles, setRemainingVehicles] = useState(null);
   const [selectedDetails, setSelectedDetails] = useState();
@@ -47,7 +40,6 @@ function Play() {
     }));
     setSelectedDetails(createDetails);
   }
-  console.log("remainingVehicles:", remainingVehicles);
 
   useEffect(() => {
     if (!planetsLoading) setRemainingPlanets(planets);

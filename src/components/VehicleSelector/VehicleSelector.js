@@ -1,7 +1,6 @@
 import "./VehicleSelector.css";
 
 const VehicleSelector = (props) => {
-  console.log("VehicleSelector:", props);
   return (
     <div className="vehicle-selector">
       {props.planetDetails.eligibleVehicles.map((vehicle) => (
